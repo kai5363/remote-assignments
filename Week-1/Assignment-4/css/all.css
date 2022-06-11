@@ -296,8 +296,8 @@ a {
   background-color: #fff;
   height: 48px;
   padding: 0 16px 0 24px;
-  -webkit-box-shadow: 1px 1px;
-          box-shadow: 1px 1px;
+  -webkit-box-shadow: 0px 1px 6px;
+          box-shadow: 0px 1px 6px;
   color: #5F6368;
   font-size: 14px;
 }
