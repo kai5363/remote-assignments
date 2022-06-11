@@ -1,0 +1,17 @@
+$color-primary: #1A73E8;
+$color-text: #202124;
+$color-nav-text: #5F6368;
+$color-background: #F1F3F4;
+$color-border: #DADCE0;
+$color-btn-hover: #D2E3FC;
+
+
+// font family
+@font-face {
+    font-family: "Google Sans";
+    src: url("../fonts/OpenSans-Regular.ttf") format("opentype");
+}
+@font-face {
+    font-family: "Noto Sans";
+    src: url("../fonts/NotoSansTC-Regular.otf") format("opentype");
+}

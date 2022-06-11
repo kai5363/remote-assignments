@@ -1,0 +1,32 @@
+body {
+    font-family: "Google Sans", "Noto Sans", sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+    color: $color-text;
+}
+.container {
+    max-width: 1496px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0 auto;
+}
+
+i {
+    text-align: center;
+}
+
+.bg-gray {
+    background-color: $color-background;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+a {    
+    color: $color-text;
+}
+
+.divider {
+    border-bottom: 1px solid $color-border;
+}

@@ -1,0 +1,211 @@
+.header{
+    position: sticky;
+    width: 100%;
+    background-color: #fff;
+    height: 48px;
+    padding: 0 16px 0 24px;
+    box-shadow: 1px 1px;
+    color: $color-nav-text;
+    font-size: 14px;
+    a {
+        color: $color-nav-text;
+    }
+    // font-size: 14px;
+}
+
+.logo {
+    width: 185px;
+}
+
+.searchbox {
+    margin-left: auto;
+    .search-field {    
+        width: 200px;  
+        font-size: 16px;
+        border: 0;
+        border-radius: 4px;
+        padding: 8px 8px 8px 40px;
+    }
+}
+
+.user-icon {
+    @include roundy(32px);
+}
+
+.btn {
+    font-size: 14px;
+    border-radius: 4px;
+    &-language{
+        background-color: #fff;
+        width: 122px;
+        height: 34px;
+        padding: 0px 31px 0px 11px;
+        border: 1px solid $color-border;
+        border-radius: 4px;
+    }
+    &-primary {
+        text-align: center;
+        color: #FFF;
+        padding: 7px 24px;
+        background-color: $color-primary;
+        margin: 0 auto;
+        &:hover {
+            background-color: darken($color-primary, 10%);
+        }
+    }
+    &-secondary {
+        text-align: center;
+        color: $color-primary;
+        padding: 8px 24px;
+        background-color: #FFF;
+        margin: 0 auto;
+        border: 1px solid $color-border;
+        &:hover {
+            background-color: $color-btn-hover;
+        }
+    }
+    &-tertiary {
+        color: $color-primary;
+        padding: 8px 8px;
+        margin-left: -4px;
+        &:hover {
+            background-color: $color-btn-hover;
+        }
+    }
+
+}
+
+.slogan {
+    font-size: 44px;
+    text-align: center;
+}
+.banner-wrap {
+    width: 49%;
+    h3 a {
+        font-size: 32px;
+        color: $color-primary;
+    }
+}
+
+.icon {
+    width: 64px;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    img {
+        height: 64px;
+        object-fit: contain;
+    }
+
+    &-caption {
+        display: block;
+        text-align: center;
+    }
+
+    
+    &-news {
+        width: 96px;
+        margin: 0 auto;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        &-img {
+            height: 96px;
+            object-fit: contain;
+        }
+    }
+
+}
+
+.card {
+    &-product {
+        width: 24%;
+        height: 130px;
+        margin-bottom: 24px;
+    }
+
+    &-news {
+        background-color: #fff;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        width: 24%;
+        min-height: 300px;
+        h3 {
+            font-size: 24px;
+            color: $color-primary;
+        }
+    }
+}
+
+.activity {
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    position: relative;
+    div {
+        min-height: 216px;
+    }
+    h3 {
+        font-size: 24px;
+        color: $color-primary;
+    }
+    &-img {
+        width: 160px;
+        position: absolute;
+        top: -20%;
+        right: 10px;
+    }
+    .btn {
+        margin-left: 0;
+    }
+}
+
+.news {
+    text-align: center;
+    font-size: 32px;
+}
+
+
+.developer {
+    margin: 0 auto;
+    max-width: 856px;
+    text-align: center;
+    &-headline {
+        font-size: 32px;
+    }
+
+    &-wrap {
+        width: 24%;
+        text-align: center;
+        border: 1px solid $color-border;
+        border-radius: 8px;
+    }
+    &-img {        
+        object-fit: cover;
+        margin-bottom: 20px;
+        @include roundy(100px);
+    }
+    &-name {
+        font-size: 24px;
+    }
+
+}
+
+.linkbox {
+    width: 33%;
+    ul {
+        font-size: 14px;    }
+
+    a:hover {
+        color: $color-primary;
+    }
+}
+
+aside nav a:hover, .terms-and-privacy a:hover {
+    color: $color-primary;
+}
+aside nav a {
+    font-size: 14px;
+}
+
+footer {
+    font-size: 14px;
+}
