@@ -13,26 +13,42 @@
 
 <body>
     <header class="header d-flex align-items-center justify-content-between">
-        <div class="logo"><a href=""><img src="img/lockup.svg" alt=""></a></div>
         <div class="d-flex align-items-center justify-content-between">
-            <div class="d-flex">
-                <nav class="ml-18 d-flex"><a class="d-block" href="">Products</a><a class="d-block" href=""><i
-                            class="fa-solid fa-caret-down"></i></a></nav>
+            <div class="logo"><a href=""><img src="img/lockup.svg" alt=""></a></div>
+            <div class="d-flex ml-32">
+                <nav class="ml-18 d-flex">
+                    <a class="d-block" href="">Products</a>
+                    <a class="sort-down d-flex" href=""><i class="fas fa-caret-down"></i></a>
+                    <a class="sort-up d-none" href=""><i class="fas fa-caret-up"></i></a>
+                </nav>
                 <nav class="mx-18"><a href="">Events</a></nav>
                 <nav class="mx-18"><a href="">Learn</a></nav>
-                <nav class="ml-18 d-flex"><a href="">Developer Communities</a><a class="d-block" href=""><i
-                            class="fa-solid fa-caret-up"></i></a></nav>
+                <nav class="ml-18 d-flex">
+                    <a href="">Developer Communities</a>
+                    <a class="sort-down d-flex" href=""><i class="fas fa-caret-down"></i></a>
+                    <a class="sort-up d-none" href=""><i class="fas fa-caret-up"></i></a>
+                </nav>
                 <nav class="mx-18"><a href="">Developer Profile</a></nav>
                 <nav class="mx-18"><a href="">Blog</a></nav>
             </div>
-            <div>
-                <div class="searchbox"><input class="search-field bg-gray" aria-multiline="false" placeholder="Search"
-                        role="searchbox" type="text">
-                </div>
-            </div>
+
         </div>
-        <div><button class="btn-language" type="button">English</button></div>
-        <div><a href=""><img class="user-icon" src="img/user.png" alt=""></a></div>
+        <div class="d-flex">
+            <div class="searchbox">
+                <i class="fa fa-search"></i>
+                <input class="search-field bg-gray" aria-multiline="false" placeholder="Search" role="searchbox"
+                    type="text">
+            </div>
+            <button class="btn-language d-flex align-items-center ml-14" type="button">
+                <i class="fa fa-globe"></i>
+                <span class="mx-8">English</span>
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <a class="setting d-flex justify-content-center align-items-center ml-14" href=""><i
+                    class="fa fa-ellipsis-v"></i></a>
+            <div class="ml-8"><a class="user-icon" href=""><img class="user-icon" src="img/user.png" alt=""></a></div>
+        </div>
+
     </header>
 
     <section class="divider">
@@ -107,9 +123,11 @@
 
         </div>
     </section>
+
     <section class="container d-flex mb-100">
         <a class="btn btn-primary" href="">View all developer products</a>
     </section>
+
     <section class="container d-flex justify-content-between mb-40">
         <div class="activity mr-20">
             <a href=""><img src="img/card-header-grid_720.png" alt=""></a>
@@ -140,6 +158,7 @@
             </div>
         </div>
     </section>
+
     <section class="bg-gray">
         <div class="container py-40">
             <h2 class="news mb-32">News</h2>
@@ -250,6 +269,7 @@
         </div>
 
     </section>
+
     <section class="divider">
         <div class="container">
             <header class="developer py-40">
@@ -296,6 +316,7 @@
             </div>
         </div>
     </section>
+
     <nav class="px-24">
         <ul class="d-flex justify-content-between py-24 divider">
             <li class="linkbox">
@@ -333,6 +354,7 @@
             </li>
         </ul>
     </nav>
+
     <aside class="px-24">
         <div class="py-24 d-flex divider">
             <div class="logo"><a href=""><img src="img/lockup.svg" alt=""></a></div>
@@ -345,8 +367,9 @@
             </div>
         </div>
     </aside>
+
     <footer class="d-flex justify-content-between px-24 py-24">
-        <div class="terms-and-privacy d-flex align-items-center">
+        <div class="legal-links d-flex align-items-center">
             <a href="">Terms</a>
             <p>|</p>
             <a href="">Privacy</a>
@@ -356,7 +379,11 @@
             <div class="ml-18">
                 <a class="btn btn-primary" href="">Subscribe</a>
             </div>
-            <a class="ml-18" href="">English</a>
+            <button class="btn-language d-flex align-items-center ml-18" type="button">
+                <i class="fa fa-globe"></i>
+                <span class="mx-8">English</span>
+                <i class="fas fa-caret-down"></i>
+            </button>
         </div>
     </footer>
 </body>
