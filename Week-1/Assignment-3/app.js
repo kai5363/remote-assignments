@@ -7,9 +7,7 @@ function countAandB(input) {
 }
 
 function toNumber(input) {
-    return input.map((value, index) => {
-        return input[index] = value.charCodeAt(0) - 96;
-    });;
+    return input.map(element => element.charCodeAt(0) - 96);
 }
 
 let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'c'];
