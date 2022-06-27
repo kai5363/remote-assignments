@@ -20,6 +20,9 @@ const getSumUp = asyncHandler((req, res) => {
   if (Number.isNaN(+number)) {
     return res.status(404).send({ success: false, msg: 'Wrong Parameter' });
   }
+  if (+number < 0) {
+    return res.status(404).send({ success: false, msg: 'Negative Value' });
+  }
   const sumUp = (num) => ((1 + num) * num) / 2;
   return res.status(200).json({ success: true, data: sumUp(+number) });
 });
