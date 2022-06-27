@@ -12,7 +12,8 @@ if(userName)
 else
   form(action="/trackName" method="get") 
     h1 Please input your name
-    p.warning
+    if(errorMessage)
+      p.warning #{errorMessage}
     input(type='text' name='userName')
     button.btn-send-user-name Submit
 

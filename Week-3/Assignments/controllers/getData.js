@@ -1,7 +1,7 @@
 function asyncHandler(callback) {
   return async (req, res, next) => {
     try {
-      await callback(req, res, next);
+      await callback(req, res);
     } catch (err) {
       next(err);
     }
@@ -14,24 +14,30 @@ const getHomePage = (req, res) => {
 
 const getSumUp = asyncHandler((req, res) => {
   const { number } = req.query;
-  if (number.isNan) {
+  if (!number) {
     return res.status(404).send({ success: false, msg: 'Lack of Parameter' });
   }
+  if (Number.isNaN(+number)) {
+    return res.status(404).send({ success: false, msg: 'Wrong Parameter' });
+  }
   const sumUp = (num) => ((1 + num) * num) / 2;
-  return res.status(200).json({
-    success: true,
-    data: sumUp(+number),
-  });
+  return res.status(200).json({ success: true, data: sumUp(+number) });
 });
 
 const getMyName = (req, res) => {
-  const { userName } = req.cookies;
-  res.render('my-name', { userName });
+  const { userName, errorMessage } = req.cookies;
+  res.clearCookie('errorMessage');
+  res.render('my-name', { userName, errorMessage });
 };
 
 const setMyName = (req, res) => {
-  const { userName } = req.query;
-  if (userName.trim().length !== 0) res.cookie('userName', userName);
+  let { userName } = req.query;
+  userName = userName.trim();
+  if (!userName) {
+    res.cookie('errorMessage', 'Please fill in your name!');
+  } else {
+    res.cookie('userName', userName);
+  }
   res.redirect('/myName');
 };
 
