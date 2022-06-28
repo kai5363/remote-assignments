@@ -3,6 +3,5 @@ extend layout.pug
 block content 
   div(class="container")
     h2(class="greet") Welcome #{email}
-    form(action="/logout" method="GET") 
-      button(class="js-logout") Logout
-  script(src="/js/member.js") 
+    a(href='/logout')
+      button(class="js-logout" ) Logout

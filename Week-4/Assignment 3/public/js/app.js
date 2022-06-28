@@ -61,7 +61,3 @@ signupButton.addEventListener('click', async () => {
   if (!success) return;
   document.location.assign('/member');
 });
-
-// logoutButton.addEventListener('click', async () => {
-//   document.location.assign('/logout');
-// });

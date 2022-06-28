@@ -40,6 +40,9 @@ const getUser = asyncHandler(async (req, res) => {
     `SELECT password FROM user WHERE email='${email}';`,
   );
   const user = result[0];
+  if (!user) {
+    return res.status(401).json({ success: false, userInfo: 'Signin Failed' });
+  }
   const match = await bcrypt.compare(password, user.password);
   if (!match) {
     return res.status(401).json({ success: false, userInfo: 'Signin Failed' });
