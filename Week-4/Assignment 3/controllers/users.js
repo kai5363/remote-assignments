@@ -12,7 +12,18 @@ function asyncHandler(callback) {
 }
 
 const getHomePage = (req, res) => {
-  res.render('user');
+  const { email } = req.cookies;
+  res.clearCookie('email');
+  res.render('user', { email });
+};
+
+const getMemberPage = (req, res) => {
+  const { email } = req.cookies;
+  res.render('member', { email });
+};
+
+const getLogoutPage = (req, res) => {
+  res.redirect('/');
 };
 
 const checkUserEmail = async (email) => {
@@ -33,6 +44,7 @@ const getUser = asyncHandler(async (req, res) => {
   if (!match) {
     return res.status(401).json({ success: false, userInfo: 'Signin Failed' });
   }
+  res.cookie('email', email);
   return res
     .status(200)
     .json({ success: true, userInfo: 'Signin successfully' });
@@ -50,9 +62,16 @@ const createUser = asyncHandler(async (req, res) => {
   await db.query(
     `INSERT INTO user (email, password) VALUE ('${email}', '${encryptedPassword}');`,
   );
+  res.cookie('email', email);
   return res
     .status(201)
     .json({ success: true, userInfo: 'Account create successfully' });
 });
 
-module.exports = { getHomePage, getUser, createUser };
+module.exports = {
+  getHomePage,
+  getMemberPage,
+  getLogoutPage,
+  getUser,
+  createUser,
+};

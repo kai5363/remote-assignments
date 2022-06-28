@@ -1,5 +1,7 @@
 const signinButton = document.querySelector('.js-signin');
 const signupButton = document.querySelector('.js-signup');
+// const logoutButton = document.querySelector('.js-logout');
+
 const headers = {
   'Content-Type': 'application/json',
 };
@@ -11,7 +13,7 @@ async function getUser(url, method) {
 }
 
 const isValidEmail = (email) => {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+  if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
     return true;
   }
   return false;
@@ -39,10 +41,7 @@ signinButton.addEventListener('click', async () => {
   const { success, userInfo } = await getUser('/api/v1/getUser', { method: 'POST', headers, body: JSON.stringify({ email, password }) });
   warning.textContent = userInfo;
   if (!success) return;
-  const accountBox = document.getElementsByClassName('account-box');
-  accountBox[0].style.display = 'none';
-  const greet = document.querySelector('.greet');
-  greet.textContent = 'Welcome';
+  document.location.assign('/member');
 });
 
 signupButton.addEventListener('click', async () => {
@@ -60,8 +59,9 @@ signupButton.addEventListener('click', async () => {
   const { success, userInfo } = await getUser('/api/v1/createUser', { method: 'POST', headers, body: JSON.stringify({ email, password }) });
   warning.textContent = userInfo;
   if (!success) return;
-  const accountBox = document.getElementsByClassName('account-box');
-  accountBox[0].style.display = 'none';
-  const greet = document.querySelector('.greet');
-  greet.textContent = 'Welcome';
+  document.location.assign('/member');
 });
+
+// logoutButton.addEventListener('click', async () => {
+//   document.location.assign('/logout');
+// });

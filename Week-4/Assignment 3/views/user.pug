@@ -4,6 +4,8 @@ block content
   div(class="container")
     h2(class="greet")
     div(class="account-box")
+      if(email)
+        h2 Thanks for your visit, #{email}
       div(class="signin-container")
         h2 Sign In
         p(class="signin-warning warning")
@@ -16,3 +18,4 @@ block content
         input(type="email" placeholder="email address" name="email" class="signup-email")
         input(type="password" placeholder="password" name="password" class="signup-password") 
         button(class="js-signup") sign up
+  script(src="/js/app.js") 

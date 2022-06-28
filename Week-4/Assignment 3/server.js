@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const mainRoutes = require('./routes/main-routes');
 const apiRoutes = require('./routes/api-routes');
 
@@ -6,6 +7,7 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.use(express.static('./public'));
+app.use(cookieParser());
 
 app.use('/', mainRoutes);
 app.use('/api/v1/', apiRoutes);
@@ -22,6 +24,6 @@ app.use((err, req, res, next) => {
   next();
 });
 
-app.listen(3000, () => {
-  console.log('server is listen on prot 300....');
+app.listen(3001, () => {
+  console.log('server is listen on prot 3000....');
 });
