@@ -1,0 +1,18 @@
+extend layout.pug 
+
+block content 
+  div(class="container")
+    h2(class="greet")
+    div(class="account-box")
+      div(class="signin-container")
+        h2 Sign In
+        p(class="signin-warning warning")
+        input(type="email" placeholder="email address" name="email" class="signin-email")
+        input(type="password" placeholder="password" name="password" class="signin-password")
+        button(class="js-signin") sign in
+      div(class="signup-container") 
+        h2 Sign Up
+        p(class="signup-warning warning")
+        input(type="email" placeholder="email address" name="email" class="signup-email")
+        input(type="password" placeholder="password" name="password" class="signup-password") 
+        button(class="js-signup") sign up
