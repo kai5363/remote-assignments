@@ -41,7 +41,7 @@ signinButton.addEventListener('click', async () => {
   const { success, userInfo } = await getUser('/api/v1/getUser', { method: 'POST', headers, body: JSON.stringify({ email, password }) });
   warning.textContent = userInfo;
   if (!success) return;
-  document.location.assign('/member');
+  window.location.href = '/member';
 });
 
 signupButton.addEventListener('click', async () => {
@@ -59,5 +59,5 @@ signupButton.addEventListener('click', async () => {
   const { success, userInfo } = await getUser('/api/v1/createUser', { method: 'POST', headers, body: JSON.stringify({ email, password }) });
   warning.textContent = userInfo;
   if (!success) return;
-  document.location.assign('/member');
+  window.location.href = '/member';
 });

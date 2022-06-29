@@ -41,11 +41,11 @@ const getUser = asyncHandler(async (req, res) => {
   );
   const user = result[0];
   if (!user) {
-    return res.status(401).json({ success: false, userInfo: 'Signin Failed' });
+    return res.status(401).json({ success: false, userInfo: 'Signin failed' });
   }
   const match = await bcrypt.compare(password, user.password);
   if (!match) {
-    return res.status(401).json({ success: false, userInfo: 'Signin Failed' });
+    return res.status(401).json({ success: false, userInfo: 'Signin failed' });
   }
   res.cookie('email', email);
   return res
