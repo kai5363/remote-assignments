@@ -9,3 +9,6 @@ Each link on GitHub page is listed below.
 
 ## Week 2
 * [Assignment 4](https://kai5363.github.io/remote-assignments/Week-2/Assignment-4/)
+
+## Week 4
+* [Assignment 2](https://kai5363.github.io/remote-assignments/Week-4/Assignment%202/)
