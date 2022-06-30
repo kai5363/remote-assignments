@@ -1,6 +1,6 @@
 function ajax(src, callback) {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", url);
+  xhr.open("GET", src);
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       callback(xhr.responseText);
