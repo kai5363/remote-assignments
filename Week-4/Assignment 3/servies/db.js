@@ -7,12 +7,15 @@ const config = {
     user: process.env.user,
     password: process.env.password,
     database: 'assignment',
+    waitForConnections: true,
+    connectionLimit: 20,
+    queueLimit: 0,
   },
 };
 
 async function query(sql, params) {
-  const connection = await mysql.createConnection(config.db);
-  const [results] = await connection.query(sql, params);
+  const pool = await mysql.createPool(config.db);
+  const [results] = await pool.query(sql, params);
   return results;
 }
 

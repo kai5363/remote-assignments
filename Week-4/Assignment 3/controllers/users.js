@@ -27,18 +27,16 @@ const getLogoutPage = (req, res) => {
 };
 
 const checkUserEmail = async (email) => {
-  const result = await db.query(
-    `SELECT email FROM user WHERE email='${email}'`,
-  );
+  const sql = 'SELECT email FROM user WHERE ?';
+  const result = await db.query(sql, { email });
   if (result.length) return true;
   return false;
 };
 
 const getUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  const result = await db.query(
-    `SELECT password FROM user WHERE email='${email}';`,
-  );
+  const sql = 'SELECT password FROM user WHERE ?';
+  const result = await db.query(sql, { email });
   const user = result[0];
   if (!user) {
     return res.status(401).json({ success: false, userInfo: 'Signin failed' });
@@ -62,9 +60,8 @@ const createUser = asyncHandler(async (req, res) => {
       .status(200)
       .json({ success: false, userInfo: 'Email has been used' });
   }
-  await db.query(
-    `INSERT INTO user (email, password) VALUE ('${email}', '${encryptedPassword}');`,
-  );
+  const sql = 'INSERT INTO user SET ?';
+  await db.query(sql, { email, password: encryptedPassword });
   res.cookie('email', email);
   return res
     .status(201)

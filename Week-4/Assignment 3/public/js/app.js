@@ -1,6 +1,5 @@
 const signinButton = document.querySelector('.js-signin');
 const signupButton = document.querySelector('.js-signup');
-// const logoutButton = document.querySelector('.js-logout');
 
 const headers = {
   'Content-Type': 'application/json',
